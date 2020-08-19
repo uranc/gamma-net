@@ -13,7 +13,8 @@ For more details, please see the methods part of our paper:
 
 # Installation
 
-Just clone ( or fork ) the repository to use the scripts.
+Clone/Fork the repository to use the scripts.
+
 ```shell
 git clone https://github.com/uranc/gamma-net.git
 ```
