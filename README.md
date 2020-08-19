@@ -28,10 +28,19 @@ pip install git+https://www.github.com/keras-team/keras-contrib.git
 # Usage
 
 ## Command-Line
+
+You can use pre-trained model based on VGG-16 to predict gamma peak value in log10 space. Rquires the input data a numpy array.
 ```shell
-git clone https://github.com/uranc/gamma-net.git
+python pred.py --mode predict --model a3
 ```
 
+Input size
+
+Requires TFRecords as an input file
+
+```shell
+python pred.py --mode train --model save_name
+```
 
 
 ## Jupyter notebook
