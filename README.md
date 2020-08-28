@@ -35,7 +35,7 @@ You can use pre-trained model based on VGG-16 to predict gamma peak value in log
 python pred.py --mode predict --model a3
 ```
 
-Input size
+Input size is fixed to be 224x224
 
 Requires TFRecords as an input file
 
@@ -46,5 +46,15 @@ python pred.py --mode train --model save_name
 
 ## Jupyter notebook
 
+- paper figure 
+
+# To Do List
+  - TFRecords documentation / loss function for training
+  - cleanup / comment
+  
+# New Features  
+  - directory of images
+  - numpy
+  
 
 
