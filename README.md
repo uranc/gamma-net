@@ -30,9 +30,10 @@ pip install git+https://www.github.com/keras-team/keras-contrib.git
 
 ## Command-Line
 
-You can use pre-trained model based on VGG-16 to predict gamma peak value in log10 space. Rquires the input data a numpy array.
+You can use the pre-trained model based on VGG-16 to predict gamma peak value in log10 space. Requires the input data to be a numpy array.
+
 ```shell
-python pred.py --mode predict --model a3
+python pred.py --mode predict --model a3 --input examples/sample.npy
 ```
 
 Input size is fixed to be 224x224
