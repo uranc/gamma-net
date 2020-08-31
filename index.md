@@ -20,11 +20,10 @@ git clone https://github.com/uranc/gamma-net.git
 ```
 
 ## Requirements
-tensorflow v1.14, keras-contrib
-Optional (other versions should also work): scikit-image==0.17.2, numpy==1.17.4
+tensorflow v1.14, keras v2.2.4, scikit-image==0.17.2 (optional: other versions should also work)
 ```shell
 pip install tensorflow==1.14
-pip install git+https://www.github.com/keras-team/keras-contrib.git
+pip install keras==2.2.4
 ```
 
 # Usage
