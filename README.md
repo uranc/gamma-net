@@ -21,6 +21,7 @@ git clone https://github.com/uranc/gamma-net.git
 
 ## Requirements
 tensorflow v1.14, keras-contrib
+Optional (other versions should also work): scikit-image==0.17.2, numpy==1.17.4
 ```shell
 pip install tensorflow==1.14
 pip install git+https://www.github.com/keras-team/keras-contrib.git
@@ -30,30 +31,21 @@ pip install git+https://www.github.com/keras-team/keras-contrib.git
 
 ## Command-Line
 
-You can use the pre-trained model based on VGG-16 to predict gamma peak value in log10 space. Requires the input data to be a numpy array.
+You can use the pre-trained model based on VGG-16 to predict gamma peak value in log10 space.
 
 ```shell
-python pred.py --mode predict --model a3 --input examples/sample.npy
+python pred.py --input examples/sample.npy
 ```
 
-Input size is fixed to be 224x224
-
-Requires TFRecords as an input file
-
-```shell
-python pred.py --mode train --model save_name
-```
+Input size is fixed to be 84 $\times$ 84 Black & White images, it can either be:
+  - A single image file (84 $\times$ 84 $\times$ 3) - see skimage.io.imread for details
+  - A numpy array ( num_images $\times$ 84 $\times$ 84 $\times$ 3 )
 
 
 ## Jupyter notebook
-
 - paper figure 
-
-# To Do List
-  - TFRecords documentation / loss function for training
-  - cleanup / comment
   
-# New Features  
+## New Features  
   - directory of images
   - numpy
   
