@@ -24,6 +24,7 @@ tensorflow v1.14, keras v2.2.4, scikit-image==0.17.2 (optional: other versions s
 ```shell
 pip install tensorflow==1.14
 pip install keras==2.2.4
+pip install scikit-image==0.17.2
 ```
 
 # Usage
