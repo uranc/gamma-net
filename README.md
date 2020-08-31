@@ -33,13 +33,21 @@ pip install git+https://www.github.com/keras-team/keras-contrib.git
 
 You can use the pre-trained model based on VGG-16 to predict gamma peak value in log10 space.
 
+Input size is fixed to be 84x84x3 Black & White images, it can either be:
+  - A single image file (84x84x3) - see skimage.io.imread for details
+  - A 4D numpy array ( num_images x 84x84x3)
+
+
+```shell
+python pred.py --input examples/sample_img.png
+```  
+Output will be printed on the command line. 
+
 ```shell
 python pred.py --input examples/sample.npy
 ```
-
-Input size is fixed to be 84 $\times$ 84 Black & White images, it can either be:
-  - A single image file (84 $\times$ 84 $\times$ 3) - see skimage.io.imread for details
-  - A numpy array ( num_images $\times$ 84 $\times$ 84 $\times$ 3 )
+Output will be saved to examples/sample_pred.npy
+  
 
 
 ## Jupyter notebook
@@ -47,7 +55,4 @@ Input size is fixed to be 84 $\times$ 84 Black & White images, it can either be:
   
 ## New Features  
   - directory of images
-  - numpy
-  
-
 
