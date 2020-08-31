@@ -1,8 +1,8 @@
 # gamma-net
 
-<img src="gamma-net.jpg" width="1200" alt="hi" class="inline"/>
+<img src="gamma-net.jpg" alt="hi" class="inline"/>
 
-We used a convolutional neural network to predict γ-peaks based on the input image. In total, training data consisted of 31988 image patches, by pooling across monkeys, channels and sessions. We used all image patches from a unique %10 of the stimuli as a test set and used the rest for training. We resized the 224x224 image patches to 84x84 in order to reduce the number parameters in the network. We used the VGG-16 model from keras applications, with frozen weights pre-trained on ImageNet for transfer learning. The VGG-16 activations were the input to a network that consisted of 2 convolutional layers and a readout layer. We compared predictions from different VGG-16 input layers, and for the main examples of RFs used conv3 3 as input (Figure 6). Convolutional layers consisted of (3x3) filters with bias, stride (2), valid padding, L1-norm kernel regularization (0.001), leaky ReLU activation (0.1), and dropout (0.5). The final two convolutional layers had 32 and 16 units. The readout layer consisted of (4x4) filters with bias and leaky ReLU activation (0.1). 
+We used a convolutional neural network to predict γ-peaks based on the input image. In total, training data consisted of 31988 image patches, by pooling across monkeys, channels and sessions. We used all image patches from a unique 10% of the stimuli as a test set and used the rest for training. We resized the 224x224 image patches to 84x84 in order to reduce the number parameters in the network. We used the VGG-16 model from keras applications, with frozen weights pre-trained on ImageNet for transfer learning. The VGG-16 activations were the input to a network that consisted of 2 convolutional layers and a readout layer. We compared predictions from different VGG-16 input layers, and for the main examples of RFs used conv3 3 as input (Figure 6). Convolutional layers consisted of (3x3) filters with bias, stride (2), valid padding, L1-norm kernel regularization (0.001), leaky ReLU activation (0.1), and dropout (0.5). The final two convolutional layers had 32 and 16 units. The readout layer consisted of (4x4) filters with bias and leaky ReLU activation (0.1). 
 
 
 For more details, please see the methods part of our paper:
@@ -21,6 +21,7 @@ git clone https://github.com/uranc/gamma-net.git
 
 ## Requirements
 tensorflow v1.14, keras-contrib
+Optional (other versions should also work): scikit-image==0.17.2, numpy==1.17.4
 ```shell
 pip install tensorflow==1.14
 pip install git+https://www.github.com/keras-team/keras-contrib.git
@@ -30,21 +31,20 @@ pip install git+https://www.github.com/keras-team/keras-contrib.git
 
 ## Command-Line
 
-You can use pre-trained model based on VGG-16 to predict gamma peak value in log10 space. Rquires the input data a numpy array.
-```shell
-python pred.py --mode predict --model a3
-```
-
-Input size
-
-Requires TFRecords as an input file
+You can use the pre-trained model based on VGG-16 to predict gamma peak value in log10 space.
 
 ```shell
-python pred.py --mode train --model save_name
+python pred.py --input examples/sample.npy
 ```
+
+Input size is fixed to be 84 $\times$ 84 Black & White images, it can either be:
+  - A single image file (84 $\times$ 84 $\times$ 3) - see skimage.io.imread for details
+  - A numpy array ( num_images $\times$ 84 $\times$ 84 $\times$ 3 )
 
 
 ## Jupyter notebook
-
-
+- paper figure 
+  
+## New Features  
+  - directory of images
 
