@@ -44,7 +44,7 @@ python pred.py --input examples/sample_img.png
 Output will be printed on the command line. 
 
 ```shell
-python pred.py --input examples/sample.npy
+python pred.py --input examples/samples.npy
 ```
 Output will be saved to examples/sample_pred.npy
   
