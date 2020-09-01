@@ -46,7 +46,7 @@ Output will be printed on the command line.
 ```shell
 python pred.py --input examples/samples.npy
 ```
-Output will be saved to examples/sample_pred.npy
+Output will be saved to examples/samples_pred.npy
   
 
 
