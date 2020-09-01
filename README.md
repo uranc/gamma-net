@@ -39,14 +39,14 @@ Input size is fixed to be 84x84x3, training set consisted of Black & White image
 
 
 ```shell
-python pred.py --input examples/sample_img.png
+python pred.py --input examples/sample_im.png
 ```  
 Output will be printed on the command line. 
 
 ```shell
-python pred.py --input examples/samples.npy
+python pred.py --input examples/samples_nat_im.npy
 ```
-Output will be saved to examples/samples_pred.npy
+Output will be saved to examples/samples_nat_im_pred.npy
   
 
 
