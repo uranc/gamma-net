@@ -51,8 +51,9 @@ Output will be saved to examples/samples_nat_im_pred.npy
 
 
 ## Jupyter notebook
-- paper figure 
+Please check [samples_nat_im_demo.ipynb](https://github.com/uranc/gamma-net/blob/master/sample_nat_im_demo.ipynb)
   
 ## New Features  
   - directory of images
+  - upgrade to tensorflow v2
 
