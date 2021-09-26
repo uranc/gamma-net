@@ -54,7 +54,7 @@ else:
 
     # resize image to 84x84
     img = resize(img, (84, 84, 3), anti_aliasing=True)
-    img[im_id, :, :, :] = img[ii, :, :, ::-1] 
+    img[im_id, :, :, :] = img[im_id, :, :, ::-1] 
     img[im_id, :, :, :] -= [103.939, 116.779, 123.68]    
     pred = model.predict(np.expand_dims(img, axis=0), steps=1)
     print('gamma-net prediction: ', pred[0][0])
