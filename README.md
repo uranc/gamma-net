@@ -20,12 +20,14 @@ git clone https://github.com/uranc/gamma-net.git
 ```
 
 ## Requirements
-tensorflow v1.14, keras v2.2.4, h5py v2.9.0 ( < v3.x should suffice), scikit-image==0.17.2, (optional: other versions should also work)
+tensorflow v1.14, keras v2.2.4, h5py v2.9.0 ( < v3.x should suffice), scikit-image==0.17.2, (optional: other versions should also work).
+
+Assuming conda:
 ```shell
-conda create --name gammanet python=3.6
-pip install --ignore-installed tensorflow==1.14
-pip install --ignore-installed keras==2.2.4
-pip install --ignore-installed scikit-image==0.17.2
+conda create --name gammanet python=3.6 
+pip install tensorflow==1.14
+pip install keras==2.2.4
+pip install scikit-image==0.17.2
 pip install --ignore-installed h5py==2.9.0
 ```
 Make sure you have the right versions installed.
