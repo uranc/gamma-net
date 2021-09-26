@@ -51,7 +51,8 @@ if flag_numpy:
     test_input = np.zeros((tmp_input.shape[0], 84, 84, 3))
     for im_id in range(tmp_input.shape[0]):
         test_input[im_id, :, :, :] = resize(tmp_input[im_id, :, :, :], (84, 84, 3), anti_aliasing=True)
-
+        test_input[im_id, :, :, :] = this_input[ii, :, :, ::-1] 
+        test_input[im_id, :, :, :] -= [103.939, 116.779, 123.68]
     pred = model.predict(test_input, steps=test_steps)
     np.save(out_name + '_pred.npy', pred)    
 else:
@@ -61,6 +62,8 @@ else:
 
     # resize image to 84x84
     img = resize(img, (84, 84, 3), anti_aliasing=True)
+    img[im_id, :, :, :] = img[ii, :, :, ::-1] 
+    img[im_id, :, :, :] -= [103.939, 116.779, 123.68]    
     pred = model.predict(np.expand_dims(img, axis=0), steps=1)
     print('gamma-net prediction: ', pred[0][0])
 
