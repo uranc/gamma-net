@@ -30,20 +30,12 @@ BATCH_SIZE = 64
 
 # model
 model = build_compile_model_pred(WEIGHT_DIR)
-model.summary()    
 
 # modelname
 flag_numpy = 1 if file_ext=='.npy' else 0
 
 if flag_numpy:
     from skimage.transform import resize
-    # out, test_size = get_numpy_dataset(input_name, BATCH_SIZE)
-    # test_steps = int(np.floor(test_size/BATCH_SIZE))+1
-    # test_inputs, initializer = out
-    # sess = tf.Session()
-    # im_in, lab = test_inputs.get_next()
-    # pred = model.predict(test_inputs.get_next(), steps=test_steps)
-    # np.save(out_name + '_pred.npy', pred)
     tmp_input = np.load(input_name)
     test_steps = 1
 
