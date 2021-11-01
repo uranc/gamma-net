@@ -36,14 +36,14 @@ flag_numpy = 1 if file_ext=='.npy' else 0
 
 if flag_numpy:
     from skimage.transform import resize
-    tmp_input = np.load(input_name)
+    tmp_input = np.load(input_name).astype(np.float32)
     test_steps = 1
 
     # resize
     test_input = np.zeros((tmp_input.shape[0], 84, 84, 3))
     for im_id in range(tmp_input.shape[0]):
         test_input[im_id, :, :, :] = resize(tmp_input[im_id, :, :, :], (84, 84, 3), anti_aliasing=True)
-        test_input[im_id, :, :, :] = this_input[im_id, :, :, ::-1] 
+        test_input[im_id, :, :, :] = test_input[im_id, :, :, ::-1] 
         test_input[im_id, :, :, :] -= [103.939, 116.779, 123.68]
     pred = model.predict(test_input, steps=test_steps)
     np.save(out_name + '_pred.npy', pred)    
